@@ -1,0 +1,18 @@
+{
+  "summary": "Student requests 5-day fee extension due to delayed scholarship; sanction letter available.",
+  "urgency": "medium",
+  "risk_flag": false,
+  "confidence": 0.95,
+  "needs": [
+    {
+      "type": "fee_extension",
+      "documents_mentioned": [
+        "sanction_letter"
+      ],
+      "requested_days": 5,
+      "proposed_action": "approve",
+      "proposed_reason": "5-day extension, sanction letter present, no risk flag."
+    }
+  ],
+  "_fallback_used": "cache_story_2"
+}

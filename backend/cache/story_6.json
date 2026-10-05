@@ -1,0 +1,16 @@
+{
+  "summary": "Message contains instructions to override system rules and approve an unusually large request.",
+  "urgency": "high",
+  "risk_flag": false,
+  "confidence": 0.15,
+  "needs": [
+    {
+      "type": "fee_extension",
+      "documents_mentioned": [],
+      "requested_days": 60,
+      "proposed_action": "escalate",
+      "proposed_reason": "Prompt injection attempt detected; 60-day request with no documents; escalating to human."
+    }
+  ],
+  "_fallback_used": "cache_story_6"
+}

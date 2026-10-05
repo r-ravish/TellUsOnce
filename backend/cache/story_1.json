@@ -1,0 +1,37 @@
+{
+  "summary": "Father hospitalised; student away 9 days, attendance short, missed mid-term, fee due Friday.",
+  "urgency": "high",
+  "risk_flag": false,
+  "confidence": 0.88,
+  "needs": [
+    {
+      "type": "fee_extension",
+      "documents_mentioned": [],
+      "requested_days": null,
+      "proposed_action": "route",
+      "proposed_reason": "Fee due but no sanction letter mentioned; route to accounts."
+    },
+    {
+      "type": "attendance_condonation",
+      "documents_mentioned": [],
+      "requested_days": 9,
+      "proposed_action": "route",
+      "proposed_reason": "9-day absence, no documents; HoD must review."
+    },
+    {
+      "type": "exam_deferral",
+      "documents_mentioned": [],
+      "requested_days": null,
+      "proposed_action": "route",
+      "proposed_reason": "Mid-term missed; exam cell needs supporting documents."
+    },
+    {
+      "type": "medical_leave_log",
+      "documents_mentioned": [],
+      "requested_days": 9,
+      "proposed_action": "route",
+      "proposed_reason": "No medical certificate mentioned; route for HoD sign-off."
+    }
+  ],
+  "_fallback_used": "cache_story_1"
+}

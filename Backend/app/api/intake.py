@@ -47,10 +47,14 @@ def intake_story(intake: IntakeRequest, db: Session = Depends(get_db)):
         # Step 2: Mask PII
         masked_story = mask_pii(intake.story)
 
-        # Step 3 & 4: AI Analysis (try demo fallback first, then AI, then general fallback)
-        analysis = get_demo_fallback(masked_story)
-        if analysis is None:
+        # Step 3 & 4: AI Analysis (Foundry live -> retry -> cache -> safe default;
+        # hardcoded demo fallback only if the AI service itself raises)
+        try:
             analysis = analyze_story(masked_story)
+        except Exception:
+            analysis = get_demo_fallback(masked_story)
+            if analysis is None:
+                raise
 
         # Step 5: Create case
         case = Case(

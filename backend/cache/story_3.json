@@ -1,8 +1,8 @@
 {
-  "summary": "Student had fever for 3 days and has a doctor's certificate; requests leave log.",
-  "urgency": "low",
+  "summary": "Student reports having a fever for 3 days and has a doctor's certificate to support their medical leave request.",
+  "urgency": "medium",
   "risk_flag": false,
-  "confidence": 0.96,
+  "confidence": 0.9,
   "needs": [
     {
       "type": "medical_leave_log",
@@ -11,8 +11,8 @@
       ],
       "requested_days": 3,
       "proposed_action": "approve",
-      "proposed_reason": "3-day absence with medical certificate; routine leave log."
+      "proposed_reason": "Student has a medical certificate and requests leave for 3 days due to fever."
     }
   ],
-  "_fallback_used": "cache_story_3"
+  "_fallback_used": "live"
 }

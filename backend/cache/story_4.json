@@ -1,23 +1,16 @@
 {
-  "summary": "Student was sick for about two weeks but has no supporting documents.",
+  "summary": "Student was sick for two weeks but does not have any medical documentation.",
   "urgency": "medium",
   "risk_flag": false,
-  "confidence": 0.82,
+  "confidence": 0.9,
   "needs": [
     {
       "type": "medical_leave_log",
       "documents_mentioned": [],
       "requested_days": 14,
       "proposed_action": "route",
-      "proposed_reason": "No documents present; cannot approve without certificate."
-    },
-    {
-      "type": "attendance_condonation",
-      "documents_mentioned": [],
-      "requested_days": 14,
-      "proposed_action": "route",
-      "proposed_reason": "Attendance impact likely; HoD needs medical certificate."
+      "proposed_reason": "Student requests medical leave without supporting documents, so the case should be reviewed by the medical leave department."
     }
   ],
-  "_fallback_used": "cache_story_4"
+  "_fallback_used": "live"
 }

@@ -1,16 +1,16 @@
 {
-  "summary": "Student's attendance is short due to attending a family wedding; requests condonation.",
-  "urgency": "low",
+  "summary": "Student reports low attendance due to a family wedding and seeks advice on what to do.",
+  "urgency": "medium",
   "risk_flag": false,
-  "confidence": 0.87,
+  "confidence": 0.9,
   "needs": [
     {
       "type": "attendance_condonation",
       "documents_mentioned": [],
       "requested_days": null,
       "proposed_action": "route",
-      "proposed_reason": "Family event absence; condonation requires HoD approval with a supporting letter."
+      "proposed_reason": "Student requests help with attendance issues likely needing departmental review."
     }
   ],
-  "_fallback_used": "cache_story_8"
+  "_fallback_used": "live"
 }

@@ -1,16 +1,16 @@
 {
-  "summary": "Student reports hostel water supply has been off for a week, affecting studies.",
+  "summary": "Student reports lack of water in hostel room for a week, affecting their ability to study.",
   "urgency": "medium",
   "risk_flag": false,
-  "confidence": 0.92,
+  "confidence": 0.9,
   "needs": [
     {
       "type": "hostel_notice",
       "documents_mentioned": [],
-      "requested_days": 7,
+      "requested_days": null,
       "proposed_action": "route",
-      "proposed_reason": "Infrastructure complaint; route to hostel office for resolution."
+      "proposed_reason": "Issue with hostel facilities requires attention from hostel management."
     }
   ],
-  "_fallback_used": "cache_story_7"
+  "_fallback_used": "live"
 }

@@ -1,0 +1,107 @@
+{
+  "fee_extension": {
+    "name": "Fee Extension",
+    "department": "Accounts",
+    "auto_approval": true,
+    "max_days": 7,
+    "required_documents": ["sanction letter", "supporting letter"],
+    "keywords": ["fee", "fees", "payment", "tuition", "fee extension", "fee deadline"]
+  },
+  "medical_leave": {
+    "name": "Medical Leave Log",
+    "department": "Head of Department",
+    "auto_approval": true,
+    "max_days": 3,
+    "required_documents": ["medical certificate"],
+    "keywords": ["medical leave", "sick", "illness", "hospital", "medical", "health leave", "sick leave"]
+  },
+  "attendance_condonation": {
+    "name": "Attendance Condonation",
+    "department": "Head of Department",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["attendance", "condonation", "absent", "attendance shortage"]
+  },
+  "exam_deferral": {
+    "name": "Exam Deferral",
+    "department": "Exam Cell",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["exam", "deferral", "postpone exam", "exam extension", "exam reschedule"]
+  },
+  "hostel_notice": {
+    "name": "Hostel Notice",
+    "department": "Hostel",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["hostel", "room", "accommodation", "hostel leave", "hostel notice"]
+  },
+  "counselling_support": {
+    "name": "Counselling Support",
+    "department": "Counselling",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "always_escalate": true,
+    "keywords": ["counselling", "counseling", "mental health", "stress", "anxiety", "depression", "distress", "emotional", "overwhelmed", "suicide", "self-harm", "hurt"]
+  },
+  "scholarship": {
+    "name": "Scholarship",
+    "department": "Scholarship",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["scholarship", "financial aid", "bursary", "grant"]
+  },
+  "library": {
+    "name": "Library",
+    "department": "Library",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["library", "book", "fine", "library fine", "overdue"]
+  },
+  "health_centre": {
+    "name": "Health Centre",
+    "department": "Health Centre",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["health centre", "clinic", "doctor", "medical appointment", "health checkup"]
+  },
+  "disability_inclusion": {
+    "name": "Disability and Inclusion",
+    "department": "Disability and Inclusion",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["disability", "inclusion", "accessibility", "special needs", "accommodation needs"]
+  },
+  "academic_advising": {
+    "name": "Academic Advising",
+    "department": "Academic Advising",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["academic advising", "course change", "credit", "academic plan", "advisor"]
+  },
+  "placement": {
+    "name": "Placement Cell",
+    "department": "Placement Cell",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["placement", "internship", "job", "interview", "career"]
+  },
+  "student_affairs": {
+    "name": "Student Affairs",
+    "department": "Student Affairs",
+    "auto_approval": false,
+    "max_days": null,
+    "required_documents": [],
+    "keywords": ["student affairs", "general", "complaint", "feedback"]
+  }
+}

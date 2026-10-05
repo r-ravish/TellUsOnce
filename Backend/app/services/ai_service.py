@@ -45,19 +45,59 @@ IMPORTANT RULES:
 Respond ONLY with valid JSON. No markdown, no code blocks, no explanation outside the JSON."""
 
 
+_TYPE_MAP = {"medical_leave_log": "medical_leave"}
+
+
+def _analyze_with_foundry(masked_story: str) -> AIAnalysisResponse:
+    """Role 1 AI helper (backend/ai.py): Foundry -> retry -> cache -> safe default. Never raises."""
+    import os
+    import sys
+
+    backend_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if backend_dir not in sys.path:
+        sys.path.insert(0, backend_dir)
+    import ai  # imported lazily so .env is already loaded
+
+    out = ai.extract_case(masked_story)
+    needs = [
+        AIAnalysisNeed(
+            request_type=_TYPE_MAP.get(n["type"], n["type"]),
+            documents_mentioned=[d.replace("_", " ") for d in n.get("documents_mentioned", [])],
+            days_requested=n.get("requested_days") or 0,
+            suggested_action=n["proposed_action"],
+            reason=n.get("proposed_reason", ""),
+        )
+        for n in out["needs"]
+    ]
+    analysis = AIAnalysisResponse(
+        summary=out["summary"],
+        urgency=out["urgency"],
+        risk_flag=out["risk_flag"],
+        confidence=out["confidence"],
+        needs=needs,
+    )
+    if analysis.risk_flag:
+        for need in analysis.needs:
+            need.suggested_action = "escalate"
+    return analysis
+
+
 def analyze_story(masked_story: str) -> AIAnalysisResponse:
     """
-    Send the masked story to OpenAI for analysis.
+    Analyze the masked story. Tries the Foundry AI helper first (backend/ai.py),
+    then falls back to the OpenAI path / keyword analysis below.
 
     Args:
         masked_story: The privacy-masked student story.
 
     Returns:
         Validated AIAnalysisResponse.
-
-    Raises:
-        Exception: If analysis fails completely.
     """
+    try:
+        return _analyze_with_foundry(masked_story)
+    except Exception as e:
+        logger.error(f"Foundry AI helper failed, using legacy path: {type(e).__name__}: {e}")
+
     if not settings.OPENAI_API_KEY:
         logger.warning("OPENAI_API_KEY not set, using fallback analysis")
         return _fallback_analysis(masked_story)
